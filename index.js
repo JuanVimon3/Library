@@ -1,5 +1,5 @@
 
-const library = document.getElementById('library')
+const bookTable = document.getElementById('bookTable')
 
 function Book (title, author, numPages, wellRead, info) {
   this.title = title
@@ -12,7 +12,15 @@ function Book (title, author, numPages, wellRead, info) {
 }
 
 function addBookToLibrary () {
-  library.innerText(myLibrary1.map(x => x))
+  myLibrary1.forEach(book => {
+    const row = document.createElement('tr')
+    row.innerHTML = 
+    `<td>${book.title}</td>
+      <td>${book.author}</td>
+      <td>${book.numPages}</td>
+      <td>${book.wellRead}</td>`;
+      bookTable.appendChild(row)
+  });
 }
 
 const book1 = new Book('Silmarilion', 'J.R.R Tolkien', '450 pages', 'already read');
@@ -22,4 +30,6 @@ const book3 = new Book('The Lord of the rings', 'J.R.R Tolkien', '1350 pages', '
 const myLibrary1 = [book1, book2, book3];
 
 let myLibrary2 = [];
+
+addBookToLibrary();
 
