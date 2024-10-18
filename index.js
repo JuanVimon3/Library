@@ -1,5 +1,5 @@
-
-const bookTable = document.getElementById('bookTable')
+document.addEventListener('DOMContentLoaded', function(){
+  const bookTable = document.getElementById('bookTable')
 
 function Book (title, author, numPages, wellRead, info) {
   this.title = title
@@ -12,7 +12,7 @@ function Book (title, author, numPages, wellRead, info) {
 }
 
 function addBookToLibrary () {
-  myLibrary1.forEach(book => {
+  myLibrary.forEach(book => {
     const row = document.createElement('tr')
     row.innerHTML = 
     `<td>${book.title}</td>
@@ -27,9 +27,15 @@ const book1 = new Book('Silmarilion', 'J.R.R Tolkien', '450 pages', 'already rea
 const book2 = new Book('The Hobbit', 'J.R.R Tolkien', '350 pages', 'already read');
 const book3 = new Book('The Lord of the rings', 'J.R.R Tolkien', '1350 pages', 'already read');
 
-const myLibrary1 = [book1, book2, book3];
+const myLibrary = [book1, book2, book3];
 
-let myLibrary2 = [];
-
+document.querySelector('form').addEventListener('submit', enterBook())
 addBookToLibrary();
+})
+
+
+
+
+
+
 

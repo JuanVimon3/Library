@@ -17,8 +17,23 @@
           <th>Already read</th>
         </tr>
       </table>
+      <h2>New book</h2>
+      <fieldset>
+        <legend>New Book Information</legend>
+        <form action="index.js">
+          <label for="title">Title</label>
+          <input type="text" placeholder="Enter title" id="title" name="title" required>
+          <label for="author">Author</label>
+          <input type="text" placeholder="Enter author" id="author" name="text" required>
+          <label for="pages">Pages</label>
+          <input type="number" placeholder="Enter page's quiantity" id="pages" name="pages" required>
+          <label for="alreadyRead">Already read?</label>
+          <input type="checkbox" id="alreadyRead" name="alreadyRead" required>
+          <input type="submit" value="Save">
+        </form>
+      </fieldset>
     </div>
   </div>
-  <script src="script.js"></script>
+  <script src="index.js"></script> 
 </body>
 </html>
