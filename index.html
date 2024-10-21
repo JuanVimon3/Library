@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
@@ -17,20 +18,23 @@
           <th>Already read</th>
         </tr>
       </table>
-      <h2>New book</h2>
-      <fieldset>
+      <button class="open-button" id="open-button" onclick="openForm()">
+        <h2>New book</h2>
+      </button>
+      <fieldset id="myForm" class="formPopup">
         <legend>New Book Information</legend>
-        <form action="index.js">
+        <form action="index.js" id="bookForm">
           <label for="title">Title</label>
           <input type="text" placeholder="Enter title" id="title" name="title" required>
           <label for="author">Author</label>
           <input type="text" placeholder="Enter author" id="author" name="text" required>
           <label for="pages">Pages</label>
-          <input type="number" placeholder="Enter page's quiantity" id="pages" name="pages" required>
+          <input type="number" placeholder="Enter page's quantity" id="pages" name="pages" required>
           <label for="alreadyRead">Already read?</label>
-          <input type="checkbox" id="alreadyRead" name="alreadyRead" required>
+          <input type="checkbox" id="alreadyRead" name="alreadyRead">
           <input type="submit" value="Save">
         </form>
+        <button onclick="closeForm()">Close form</button>
       </fieldset>
     </div>
   </div>

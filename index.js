@@ -43,10 +43,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const userBook = new Book(newTitle, newAuthor, newNumPages, newWellRead)
     myLibrary1.push(userBook)
     addBookToLibrary();
+    closeForm();
+  }
+
+  function openForm(){
+    document.getElementById('myForm').style.display = 'block';
+  }
+
+  function closeForm(){
+    document.getElementById('myForm').style.display = 'none';
   }
 
 
-  addBookToLibrary();  
 
-  document.querySelector('form').addEventListener('submit', enterBook)
+  addBookToLibrary();  
+  
+  document.getElementById('open-button').addEventListener('click', openForm);
+  document.getElementById('bookForm').addEventListener('submit', enterBook);
+
 });
