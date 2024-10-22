@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <th>Author</th>
       <th>Pages</th>
       <th>Already read</th>
+      <th>Delete</th>
     </tr>
     `;
     myLibrary1.forEach(book => {
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <td>${book.author}</td>
         <td>${book.numPages}</td>
         <td>${book.wellRead ? 'Yes' : 'No'}</td>
+        <td><button ${id='deleteBook'} ${onclick= deleteBook()}>Delete</button></td>
       `;
       bookTable.appendChild(row);
     });
@@ -44,6 +46,11 @@ document.addEventListener('DOMContentLoaded', function() {
     myLibrary1.push(userBook)
     addBookToLibrary();
     closeForm();
+  }
+  
+  const bookToDelete = document.getElementById('deleteBook').value
+  function deleteBook(myLibrary1, bookToDelete){
+    myLibrary1.splice(bookToDelete, 1)
   }
 
   function openForm(){
