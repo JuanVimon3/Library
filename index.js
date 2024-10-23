@@ -22,14 +22,14 @@ document.addEventListener('DOMContentLoaded', function() {
       <th>Delete</th>
     </tr>
     `;
-    myLibrary1.forEach(book => {
+    myLibrary1.forEach((book, index) => {
       const row = document.createElement('tr');
       row.innerHTML = `
         <td>${book.title}</td>
         <td>${book.author}</td>
         <td>${book.numPages}</td>
         <td>${book.wellRead ? 'Yes' : 'No'}</td>
-        <td><button ${id='deleteBook'} ${onclick= deleteBook()}>Delete</button></td>
+        <td><button onclick="deleteBook(${index})">Delete</button></td>
       `;
       bookTable.appendChild(row);
     });
@@ -48,9 +48,9 @@ document.addEventListener('DOMContentLoaded', function() {
     closeForm();
   }
   
-  const bookToDelete = document.getElementById('deleteBook').value
-  function deleteBook(myLibrary1, bookToDelete){
-    myLibrary1.splice(bookToDelete, 1)
+  function deleteBook(index) {
+    myLibrary1.splice(index, 1)
+    addBookToLibrary()
   }
 
   function openForm(){
@@ -67,5 +67,8 @@ document.addEventListener('DOMContentLoaded', function() {
   
   document.getElementById('open-button').addEventListener('click', openForm);
   document.getElementById('bookForm').addEventListener('submit', enterBook);
+
+  console.log(myLibrary1)
+  console.log(myLibrary1)
 
 });
