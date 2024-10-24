@@ -47,12 +47,12 @@ document.addEventListener('DOMContentLoaded', function() {
     addBookToLibrary();
     closeForm();
   }
-  
-  function deleteBook(index) {
+
+  window.deleteBook = function(index){
     myLibrary1.splice(index, 1)
     addBookToLibrary()
   }
-
+  
   function openForm(){
     document.getElementById('myForm').style.display = 'block';
   }
