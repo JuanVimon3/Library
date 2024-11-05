@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <th>Pages</th>
       <th>Already read</th>
       <th>Delete</th>
+      <th>Change read state</th>
     </tr>
     `;
     myLibrary1.forEach((book, index) => {
@@ -28,8 +29,9 @@ document.addEventListener('DOMContentLoaded', function() {
         <td>${book.title}</td>
         <td>${book.author}</td>
         <td>${book.numPages}</td>
-        <td>${book.wellRead ? 'Yes' : 'No'}</td>
+        <td>${book.wellRead ? 'Yes' : 'No'}</td>        
         <td><button onclick="deleteBook(${index})">Delete</button></td>
+        <td><button onclick="toggleBookReadState(${index})">Already read?</button></td>
       `;
       bookTable.appendChild(row);
     });
@@ -52,6 +54,11 @@ document.addEventListener('DOMContentLoaded', function() {
     myLibrary1.splice(index, 1)
     addBookToLibrary()
   }
+
+  window.toggleBookReadState = function (index) {
+    myLibrary1[index].wellRead = !myLibrary1[index].wellRead;
+    addBookToLibrary()
+  }
   
   function openForm(){
     document.getElementById('myForm').style.display = 'block';
@@ -60,8 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
   function closeForm(){
     document.getElementById('myForm').style.display = 'none';
   }
-
-
 
   addBookToLibrary();  
   
