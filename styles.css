@@ -24,4 +24,9 @@ td {
   font-family: sans-serif;
   font-size: 0.8rem;
   letter-spacing: 1px;
+  max-width: 95%;
+}
+
+.open-button {
+  margin: 10px;
 }
