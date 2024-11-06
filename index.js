@@ -60,14 +60,14 @@ document.addEventListener('DOMContentLoaded', function() {
     addBookToLibrary()
   }
   
-  function openForm(){
-    document.getElementById('myForm').style.display = 'block';
+  window.openForm = function () {
+    document.getElementById('myForm').style.display = 'block'
   }
 
-  function closeForm(){
-    document.getElementById('myForm').style.display = 'none';
+  window.closeForm = function () {
+    document.getElementById('myForm').style.display = 'none'
   }
-
+  
   addBookToLibrary();  
   
   document.getElementById('open-button').addEventListener('click', openForm);
