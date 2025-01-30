@@ -1,11 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
   const bookTable = document.getElementById('bookTable');  
 
-  function Book(title, author, numPages, wellRead) {
-    this.title = title;
-    this.author = author;
-    this.numPages = numPages;
-    this.wellRead = wellRead;
+  // function Book(title, author, numPages, wellRead) {
+  //   this.title = title;
+  //   this.author = author;
+  //   this.numPages = numPages;
+  //   this.wellRead = wellRead;
+  // }
+  class Book {
+    constructor(title, author, numPages, wellRead) {
+      this.title = title;
+      this.author = author;
+      this.numPages = numPages;
+      this.wellRead = wellRead
+    }
   }
   const book1 = new Book('Silmarilion', 'J.R.R Tolkien', 450, true);
   const book2 = new Book('The Hobbit', 'J.R.R Tolkien', 350, true);
