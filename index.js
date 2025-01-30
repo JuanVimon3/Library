@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
       this.numPages = numPages;
       this.wellRead = wellRead
     }
+    toogleRead(){
+      this.wellRead = !this.wellRead
+    }
   }
   const book1 = new Book('Silmarilion', 'J.R.R Tolkien', 450, true);
   const book2 = new Book('The Hobbit', 'J.R.R Tolkien', 350, true);
@@ -64,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   window.toggleBookReadState = function (index) {
-    myLibrary1[index].wellRead = !myLibrary1[index].wellRead;
+    myLibrary1[index].toogleRead()
     addBookToLibrary()
   }
   
